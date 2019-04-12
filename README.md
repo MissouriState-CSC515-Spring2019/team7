@@ -8,4 +8,4 @@ one page app useing .....
 - Scott Popken
 - Josiah McGurty
 - Adam Morse
-- Kyle Lepien
+- Kyle Lepine
