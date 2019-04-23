@@ -1,9 +1,9 @@
 import React from 'react';
 
 const Form = props => (
-    <form onSubmit={props.getData}>
+    <form onSubmit={props.getMovie}>
         <input type="text" name="movie" placeholder="Movie.."/>
-        <button>Find Movie</button>
+        <button>Find Movies</button>
     </form>
 )
 
