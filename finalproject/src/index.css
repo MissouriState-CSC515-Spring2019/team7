@@ -6,9 +6,19 @@
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: black;
+  color: whitesmoke;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+div{
+  border: 2px double red;
+  border-radius: 36px;
+  padding: 10px;
+  width: 250px;
+  height: 400px;
+  float: left;
 }

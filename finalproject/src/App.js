@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Form from './components/Form'
-import Movies from './components/Movies'
+import Movies from './components/movies'
 
 /*
 guides: https://www.youtube.com/watch?v=PbJt7-a2274,

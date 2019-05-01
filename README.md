@@ -9,3 +9,5 @@ one page app useing .....
 - Josiah McGurty
 - Adam Morse
 - Kyle Lepine
+
+to now what to do see the next readme
