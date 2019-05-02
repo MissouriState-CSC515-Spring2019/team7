@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Form from './components/Form'
 import Movies from './components/Movies'
+import PopularMovies from './components/popularMovies';
+
 
 /*
 guides: https://www.youtube.com/watch?v=PbJt7-a2274,
@@ -16,45 +18,41 @@ const API_KEY = '36341ad74dd05db38d810686efc2d20f';
 class App extends Component {
   state = {
     movies: [],
-    error: undefined
+    error: null
   }
-  /*
-  getPopular = async(e) => {
-    e.preventDefault();
-    const API_CALL = await fetch('https://api.themoviedb.org/3/discover/movie?api_key=36341ad74dd05db38d810686efc2d20f&sort_by=popularity.desc');
-    const data = await API_CALL.json();
-    this.setState({ movies: data.results})
-     
-  }
-  */
-
-  getMovie = async(e) => {
+  getMovies = async(e) => {
     e.preventDefault();
     const MOVIE_QUERY = e.target.elements.movie.value;
     const API_CALL = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${MOVIE_QUERY}`);
     const data = await API_CALL.json();
-    if(MOVIE_QUERY) {
-      this.setState({
+    this.setState({
         movies : data.results,
-        error:''
+        error:null
       })
-    } /*
-    else {
-      this.setState({
-        movies : undefined,
-        error: "Please enter a movie."
-      })
-    }
-    */
+    
   }
+  /*componentDidMount = () => {
+    const json = localStorage.getItem("movies");
+    const movies = JSON.parse(json);
+    this.setState({ movies });
+  }
+  
+  componentDidUpdate = () => {
+    const movies = JSON.stringify(this.state.movies);
+    localStorage.setItem("movies", movies);
+  }
+  */
+  
+  
   render() {
     return (
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">Movie Search</h1>
         </header>
-        <Form getMovie={this.getMovie}/>
-        <Movies movies={this.state.movies} error={this.state.error}/>
+        <Form getMovies={this.getMovies}/>
+        <Movies movies={this.state.movies}/>
+        <PopularMovies/>
       </div>
     );
   }
