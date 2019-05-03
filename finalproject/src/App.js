@@ -16,9 +16,9 @@ TODO: 1. Add single movie page
 const API_KEY = '36341ad74dd05db38d810686efc2d20f';
 
 class App extends Component {
+  /*
   state = {
-    movies: [],
-    error: null
+    movies: []
   }
   getMovies = async(e) => {
     e.preventDefault();
@@ -26,10 +26,8 @@ class App extends Component {
     const API_CALL = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${MOVIE_QUERY}`);
     const data = await API_CALL.json();
     this.setState({
-        movies : data.results,
-        error:null
-      })
-    
+        movies : data.results
+    })
   }
   /*componentDidMount = () => {
     const json = localStorage.getItem("movies");
@@ -49,9 +47,8 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">Movie Search</h1>
+          <Form/>
         </header>
-        <Form getMovies={this.getMovies}/>
-        <Movies movies={this.state.movies}/>
         <PopularMovies/>
       </div>
     );
