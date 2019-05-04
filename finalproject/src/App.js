@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Form from './components/Form'
-import Movies from './components/Movies'
+//import Movies from './components/Movies'
 import PopularMovies from './components/popularMovies';
 
 
@@ -13,7 +13,7 @@ TODO: 1. Add single movie page
       2. Add popular movies page
       3. Add error for no entry in search bar
 */
-const API_KEY = '36341ad74dd05db38d810686efc2d20f';
+//const API_KEY = '36341ad74dd05db38d810686efc2d20f';
 
 class App extends Component {
   /*

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
+
 import Form from './Form';
 
 const API_KEY = '36341ad74dd05db38d810686efc2d20f';
@@ -8,17 +9,22 @@ class Movies extends Component {
     state = {
         movies: []
     }
-    componentDidMount = async () => {
+    APICALL = async () => {
         const MOVIE_QUERY = this.props.match.params.title
         const API_CALL = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${MOVIE_QUERY}`);
-        console.log(API_CALL);
         const data = await API_CALL.json();
         this.setState({
             movies : data.results
         })
-      }
-      render(){
-        const movies = this.state.movies;
+    }
+    componentDidMount = async () => {
+        this.APICALL();
+    }
+    componentDidUpdate = async () => {
+        this.APICALL();
+    }
+    render(){
+    const movies = this.state.movies;   
         return(
             <div className="App">
                 <header className="App-header">
@@ -37,7 +43,7 @@ class Movies extends Component {
                                 {movie.poster_path && movie.release_date && <p className="movie__releaseDate">Release Date: <span>{new Date(`${movie.release_date}`).toDateString()}</span></p>}
                             </div>
                             <button className="movie__buttons">
-                                <Link to={{pathname: `/movie/${movie.title}`}}>View Movie</Link>
+                               {movie.poster_path &&<Link to={{pathname: `/movie/${movie.title}`}}>View Movie</Link>}
                             </button>
                         </div>
                     </div>

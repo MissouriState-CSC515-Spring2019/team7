@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
+
 const API_KEY = '36341ad74dd05db38d810686efc2d20f';
 
 class PopularMovies extends Component {
@@ -28,7 +29,7 @@ class PopularMovies extends Component {
                                 {movie.poster_path && movie.release_date && <p className="movie__releaseDate">Release Date: <span>{new Date(`${movie.release_date}`).toDateString()}</span></p>}
                             </div>
                             <button className="movie__buttons">
-                                <Link to={{pathname: `/movie/${movie.title}`}}>View Movie</Link>
+                                {movie.poster_path &&<Link to={{pathname: `/movie/${movie.title}`}}>View Movie</Link>}
                             </button>
                         </div>
                     </div>
