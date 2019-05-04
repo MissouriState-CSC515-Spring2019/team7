@@ -3,7 +3,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 import App from "../App";
 import Movie from "./Movie";
-import Movies from "./Movies"
+import Movies from "./movies"
 
 
 const Router = () => (
