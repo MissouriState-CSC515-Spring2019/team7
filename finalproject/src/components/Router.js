@@ -11,7 +11,7 @@ const Router = () => (
         <Switch>
             <Route path='/' component={App} exact/>
             <Route path='/movie/:title' render={(props)=> <Movie {...props} />}/>
-            <Route path='/movies/:title' component={Movies}/>
+            <Route path='/movies/:title' component={Movies} />}/>
         </Switch>
     </BrowserRouter>
 )

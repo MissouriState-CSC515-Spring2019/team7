@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Form from './Form';
 
 const API_KEY = '36341ad74dd05db38d810686efc2d20f';
 
@@ -19,6 +20,11 @@ class Movie extends Component {
     render(){
         const movie = this.state.activeMovie;
         return(
+            <div className="App">
+                <header className="App-header">
+                    <h1 className="App-title">Movie Search</h1>
+                    <Form/>
+                </header>
             <div className="container">
                 <div className="active-movie">
                     {movie.poster_path && <img className="acitve-moive__img" src={`http://image.tmdb.org/t/p/w185${movie.poster_path}`} alt={`${movie.title}`} />}
@@ -26,6 +32,7 @@ class Movie extends Component {
                     {movie.poster_path && movie.release_date && <h4 className="active-movie__date">Release Date: {new Date(`${movie.release_date}`).toDateString()}</h4>}
                     {movie.poster_path && movie.overview && <p className="movie_key">Overview: <span className="active-movie__overview">{movie.overview}</span></p>}
                 </div>
+            </div>
             </div>
         )
     }
