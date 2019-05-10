@@ -9,3 +9,9 @@ one page app useing .....
 - Josiah McGurty
 - Adam Morse
 - Kyle Lepine
+
+#### How to Run:
+- navigate to finalproject folder
+- ```npm start``` to run app
+- ```npm test``` to run unit test
+- ```npm start & wait-on http://localhost:3000 ; ./node_modules/.bin/cypress open``` to run E2E  
