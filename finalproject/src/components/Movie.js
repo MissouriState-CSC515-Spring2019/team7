@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import Form from './Form';
 
 const API_KEY = '36341ad74dd05db38d810686efc2d20f';
@@ -10,13 +11,11 @@ class Movie extends Component {
     componentDidMount = async () => {
         const TITLE = this.props.match.params.title
         const API_CALL_SIGNLE = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${TITLE}`);
-        console.log(API_CALL_SIGNLE)
         const movieData = await API_CALL_SIGNLE.json();
         this.setState({
             activeMovie: movieData.results[0]
         });
     }
-    
     render(){
         const movie = this.state.activeMovie;
         return(
