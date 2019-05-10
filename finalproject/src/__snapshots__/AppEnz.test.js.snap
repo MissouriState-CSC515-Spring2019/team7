@@ -1,21 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Link should render correctly 1`] = `
-<div
-  className="container"
->
-  <div
-    className="active-movie"
-  />
-</div>
-`;
-
 exports[`Movie should render correctly 1`] = `
 <div
-  className="container"
+  className="App"
 >
+  <header
+    className="App-header"
+  >
+    <h1
+      className="App-title"
+    >
+      Movie Search
+    </h1>
+    <withRouter(Form) />
+  </header>
   <div
-    className="active-movie"
-  />
+    className="container"
+  >
+    <div
+      className="active-movie"
+    />
+  </div>
 </div>
 `;
