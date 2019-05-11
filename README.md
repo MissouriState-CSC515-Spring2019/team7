@@ -14,4 +14,4 @@ one page app useing .....
 - navigate to finalproject folder
 - ```npm start``` to run app
 - ```npm test``` to run unit test
-- ```npm start & wait-on http://localhost:3000 ; ./node_modules/.bin/cypress open``` to run E2E  
+- ```npm start & wait-on http://localhost:3000 ; ./node_modules/.bin/cypress open``` to run E2E on Unix based machines.
